@@ -15,7 +15,7 @@ const PlayBar = ({currCell, bpm, cellSize}) => {
     return (
         <div className="play-bar" ref={playBarRef}
         style={{
-            transitionDuration: `${currCell === 0 ? 0 : bpm / 60}s`
+            // transitionDuration: `${currCell === 0 ? 0 : bpm / 60}s`
         }} />
     )
 }

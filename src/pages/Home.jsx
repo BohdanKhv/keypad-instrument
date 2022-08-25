@@ -18,14 +18,14 @@ const Home = () => {
     const [bpm, setBpm] = useState(120);
     const [cellSize, setCellSize] = useState(18);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currCell, setCurrCell] = useState(0);
+    const [currCell, setCurrCell] = useState(-1);
     const instrumentRef = useRef(null);
     // Global timer for the playbar
     let timer;
 
     const updateCurrCell = () => {
         timer = !timer && setInterval(() => {
-        setCurrCell(prevCount => prevCount === +cellSize ? 0 : prevCount + 1)
+        setCurrCell(prevCount => prevCount === +cellSize ? -1 : prevCount + 1)
         }, 1000 / (bpm / 60))
     }
     
@@ -34,7 +34,7 @@ const Home = () => {
             updateCurrCell();
         } else {
             clearInterval(timer);
-            setCurrCell(0);
+            setCurrCell(-1);
         }
         return () => clearInterval(timer)
     }, [isPlaying]);
@@ -69,8 +69,10 @@ const Home = () => {
                     onWheel={onWheel}
                     ref={instrumentRef}
                 >
-                    <PlayBar bpm={bpm} currCell={currCell} cellSize={cellSize}/>
-                    {activeTab === 0 && <Drums cellSize={cellSize} />}
+                    {currCell > -1 &&
+                        <PlayBar bpm={bpm} currCell={currCell} cellSize={cellSize}/>
+                    }
+                    {activeTab === 0 && <Drums cellSize={cellSize} currCell={currCell} />}
                     {activeTab === 1 && <Guitar cellSize={cellSize} />}
                 </div>
             </section>

@@ -24,7 +24,7 @@ const Bars = ({bar, setBar}) => {
     return (
         <div className="section-container mb-3">
             <h5 className="fs-3 px-2">
-                Number of Bars
+                Bars
             </h5>
             <div className="bpm-menu">
                 <div 

@@ -1,7 +1,14 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const Cell = ({index}) => {
+const Cell = ({index, playNote, currCell, thisIndex}) => {
     const [active, setActive] = useState(false);
+
+    useEffect(() => {
+        if(currCell === thisIndex && active) {
+            playNote();
+            // console.log(thisIndex, currCell);
+        }
+    }, [currCell]);
 
     return (
         <div 
@@ -10,7 +17,9 @@ const Cell = ({index}) => {
             style={{
                 ['--cell-note-index']: `var(--color-${index+1})`
             }}
-        />
+        >
+            {/* {thisIndex} */}
+        </div>
     )
 }
 

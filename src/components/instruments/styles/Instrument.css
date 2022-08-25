@@ -26,9 +26,17 @@
     height: 50px;
     width: 50px;
     min-width: 50px;
+    cursor: pointer;
     background-color: var(--color-tertiary);
     color: #fff;
     border-radius: var(--border-radius-sm);
+    transition-duration: var(--transition-duration);
+}
+.instrument-note:hover {
+    opacity: 0.5;
+}
+.instrument-note:active {
+    opacity: 1;
 }
 
 .note-cell {
@@ -39,8 +47,18 @@
     background-color: var(--color-main);
     border-radius: var(--border-radius-sm);
     transition-duration: var(--transition-duration);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .note-cell-active,
 .note-cell:hover {
     background-color: var(--cell-note-index);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .instrument {
+        overscroll-behavior: unset;
+    }
 }
