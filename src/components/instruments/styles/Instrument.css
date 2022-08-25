@@ -42,5 +42,5 @@
 }
 .note-cell-active,
 .note-cell:hover {
-    background-color: var(--color-tertiary);
+    background-color: var(--cell-note-index);
 }
