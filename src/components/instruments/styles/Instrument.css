@@ -2,6 +2,8 @@
     position: relative;
     overflow-x: scroll;
     padding-bottom: 16px;
+    /* scroll-behavior: smooth; */
+    overscroll-behavior: contain;
 }
 
 .instrument-notes {

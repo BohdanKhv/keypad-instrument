@@ -1,0 +1,11 @@
+.play-bar {
+    position: absolute;
+    top: 0;
+    width: 3px;
+    background-color: var(--color-primary);
+    height: 97.8%;
+    left: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition-timing-function: ease-out;
+    z-index: 1;
+}

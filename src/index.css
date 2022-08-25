@@ -47,6 +47,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   min-height: 100vh;
+  padding-bottom: 30vh;
   background-color: var(--color-main);
   /* background: #ff0078;
 	background: linear-gradient(-45deg, #ff0078, #e73c7e, #6222eb, #6f34f2);
@@ -67,10 +68,12 @@ body {
   border: 1px solid var(--color-border);
   color: #ffffff;
   padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   display: flex;
   gap: 8px;
-  box-shadow: var(--box-shadow-sm);
   transition-duration: var(--transition-duration);
 }
 

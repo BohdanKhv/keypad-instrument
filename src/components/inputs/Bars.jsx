@@ -22,7 +22,7 @@ const Bars = ({bar, setBar}) => {
     }, [bar]);
 
     return (
-        <section className="section-container mt-1">
+        <section className="section-container mt-1 mb-3">
             <h5 className="fs-3 px-2">
                 Number of Bars
             </h5>

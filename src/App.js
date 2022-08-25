@@ -4,7 +4,7 @@ import { Home } from './pages';
 function App() {
   return (
     <Router>
-      <div className="container max-width">
+      <div className="container max-w mx-auto">
         <Routes>
           <Route path='/' element={<Home/>} />
         </Routes>
