@@ -1,0 +1,43 @@
+.instrument {
+    position: relative;
+    overflow-x: scroll;
+    padding-bottom: 16px;
+}
+
+.instrument-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.instrument-note-container {
+    display: flex;
+    gap: 8px;
+}
+
+.instrument-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    background-color: var(--color-tertiary);
+    color: #fff;
+    border-radius: var(--border-radius-sm);
+}
+
+.note-cell {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    cursor: pointer;
+    background-color: var(--color-main);
+    border-radius: var(--border-radius-sm);
+    transition-duration: var(--transition-duration);
+}
+.note-cell-active,
+.note-cell:hover {
+    background-color: var(--color-tertiary);
+}
