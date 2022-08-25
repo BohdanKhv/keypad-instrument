@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const Cell = ({index, playNote, currCell, thisIndex}) => {
     const [active, setActive] = useState(false);
+    const cellRef = useRef(null);
 
     useEffect(() => {
         if(currCell === thisIndex && active) {
             playNote();
-            // console.log(thisIndex, currCell);
+            cellRef.current.classList.add("animate-cell");
+            cellRef.current.addEventListener("animationend", () => {
+                cellRef.current.classList.remove("animate-cell");
+            });
         }
     }, [currCell]);
 
@@ -17,6 +21,7 @@ const Cell = ({index, playNote, currCell, thisIndex}) => {
             style={{
                 ['--cell-note-index']: `var(--color-${index+1})`
             }}
+            ref={cellRef}
         >
             {/* {thisIndex} */}
         </div>

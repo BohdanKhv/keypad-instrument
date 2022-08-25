@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
-import { Tabs, Drums, Guitar, BPM, Bars, Play, PlayBar } from "../components";
+import { Tabs, Drums, Pad, BPM, Bars, Play, PlayBar } from "../components";
 import '../components/instruments/styles/Instrument.css';
 
 const instrumentTabs = [
     {
-        label: "Drums",
+        label: "Pad",
         value: 0
     },
     {
-        label: "Guitar",
+        label: "Drums",
         value: 1
-    }
+    },
 ];
 
 const Home = () => {
@@ -59,21 +59,21 @@ const Home = () => {
                 </div>
             </div>
             <section className="section-container mt-1 pb-2">
-                <div className="flex justify-between mb-2">
+                <div className="flex justify-between">
                     <div className="bg-main box-sm border-radius">
-                        {currCell}
+                        {currCell+1}
                     </div>
                     <Play isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
                 </div>
-                <div className="instrument"
+                <div className="instrument pt-2"
                     onWheel={onWheel}
                     ref={instrumentRef}
                 >
                     {currCell > -1 &&
                         <PlayBar bpm={bpm} currCell={currCell} cellSize={cellSize}/>
                     }
-                    {activeTab === 0 && <Drums cellSize={cellSize} currCell={currCell} />}
-                    {activeTab === 1 && <Guitar cellSize={cellSize} />}
+                    {activeTab === 0 && <Pad cellSize={cellSize} currCell={currCell} />}
+                    {activeTab === 1 && <Drums cellSize={cellSize} currCell={currCell} />}
                 </div>
             </section>
         </main>
