@@ -8,7 +8,6 @@ const PlayBar = ({currCell, bpm, cellSize}) => {
         // Move the playbar to the current cell
         const playBar = playBarRef.current;
         playBar.style.left = `${55 + currCell * 58}px`;
-console.log(currCell, cellSize)
         // const currSelected = document.querySelector(`.instrument`);
         // currSelected.scrollLeft = (currCell * 58) / 2;
     } , [currCell]);

@@ -15,8 +15,8 @@ const instrumentTabs = [
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const [bpm, setBpm] = useState('120');
-    const [cellSize, setCellSize] = useState('18');
+    const [bpm, setBpm] = useState(120);
+    const [cellSize, setCellSize] = useState(18);
     const [isPlaying, setIsPlaying] = useState(false);
     const [currCell, setCurrCell] = useState(0);
     const instrumentRef = useRef(null);
@@ -25,7 +25,6 @@ const Home = () => {
 
     const updateCurrCell = () => {
         timer = !timer && setInterval(() => {
-        console.log('ticking')
         setCurrCell(prevCount => prevCount === +cellSize ? 0 : prevCount + 1)
         }, 1000 / (bpm / 60))
     }
@@ -50,9 +49,15 @@ const Home = () => {
 
     return (
         <main className="py-3">
-            <BPM bpm={bpm} setBpm={setBpm}/>
-            <Bars bar={cellSize} setBar={setCellSize}/>
             <Tabs items={instrumentTabs} active={activeTab} onChange={setActiveTab} />
+            <div className="flex gap-1 justify-between">
+                <div className="w-50">
+                    <BPM bpm={bpm} setBpm={setBpm}/>
+                </div>
+                <div className="w-50">
+                    <Bars bar={cellSize} setBar={setCellSize}/>
+                </div>
+            </div>
             <section className="section-container mt-1 pb-2">
                 <div className="flex justify-between mb-2">
                     <div className="bg-main box-sm border-radius">

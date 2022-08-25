@@ -22,7 +22,7 @@ const BPM = ({bpm, setBpm}) => {
     }, [bpm]);
 
     return (
-        <section className="section-container">
+        <div className="section-container">
             <h5 className="fs-3 px-2">
                 BPM
             </h5>
@@ -35,16 +35,16 @@ const BPM = ({bpm, setBpm}) => {
                     {bpmValues.map(bpmVal => (
                         <span
                             key={bpmVal}
-                            className={`bpm-item${bpm === bpmVal ? ' bpm-item-active' : ''}`}
+                            className={`bpm-item${bpm === +bpmVal ? ' bpm-item-active' : ''}`}
                             data-bpm={bpmVal}
-                            onClick={() => setBpm(bpmVal)}
+                            onClick={() => setBpm(+bpmVal)}
                         >
                             {bpmVal}
                         </span>
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

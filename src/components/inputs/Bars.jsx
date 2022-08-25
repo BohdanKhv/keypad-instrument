@@ -22,7 +22,7 @@ const Bars = ({bar, setBar}) => {
     }, [bar]);
 
     return (
-        <section className="section-container mt-1 mb-3">
+        <div className="section-container mb-3">
             <h5 className="fs-3 px-2">
                 Number of Bars
             </h5>
@@ -35,16 +35,16 @@ const Bars = ({bar, setBar}) => {
                     {barValues.map(barVal => (
                         <span
                             key={barVal}
-                            className={`bpm-item${bar === barVal ? ' bpm-item-active' : ''}`}
+                            className={`bpm-item${bar === +barVal ? ' bpm-item-active' : ''}`}
                             data-bar={barVal}
-                            onClick={() => setBar(barVal)}
+                            onClick={() => setBar(+barVal)}
                         >
                             {barVal}
                         </span>
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 
